@@ -49,7 +49,7 @@ class blog_list(ListCreateAPIView):
 
 class Blogs_details(RetrieveUpdateDestroyAPIView):
     serializer_class = Blogs_serializers
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAdminUser]
 
     def get_queryset(self):
         pk = self.kwargs['pk']
